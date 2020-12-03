@@ -31,9 +31,12 @@ const StylesSignup = StyleSheet.create({
         
     },
     welcomeWrapper:{
-        position:"absolute",
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        alignContent:"center",
         top:"30%",
-        left:"11%"
+       
     },
     termsAndConditions:{
         display:"flex",
