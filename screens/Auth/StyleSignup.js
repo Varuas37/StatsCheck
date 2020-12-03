@@ -27,7 +27,13 @@ const StylesSignup = StyleSheet.create({
         alignItems:"center",
         alignContent:"center",
         flexDirection:"row",
+       
         
+    },
+    welcomeWrapper:{
+        position:"absolute",
+        top:"30%",
+        left:"11%"
     },
     termsAndConditions:{
         display:"flex",
@@ -60,8 +66,7 @@ const StylesSignup = StyleSheet.create({
         position:"absolute",
         bottom:"15%",
         width:"70%",
-        
-       
+        left:"15%"
     }
   });
 

@@ -6,12 +6,12 @@ import iconStat from "../../assets/iconStat.png";
 import iconGoogle from "../../assets/iconGoogle.png";
 import pngAnalytics from "../../assets/Analytics.png";
 import Button from "../../components/Button/Button";
-function Signup(props) {
+function Signup({navigation}) {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 const handleSignin=()=>{
     if (isEnabled){
-
+navigation.navigate("AddUsername")
     }
     else{
         alert("You need to accept the Terms & Conditons and Privacy policy before signing up")
@@ -43,6 +43,8 @@ const handleSignin=()=>{
           minWidth:348,
         }}
       ></Image>
+  <View style={StylesSignup.welcomeWrapper}>
+
 
       <View style={StylesSignup.welcome}>
         <View style={StylesSignup.rectangle}>
@@ -56,6 +58,8 @@ const handleSignin=()=>{
       <Text style={{ color: "white" }}>
         Track your tiktok progress and get in-depth insights
       </Text>
+      </View>
+     
 
  
 <View style={StylesSignup.bottomPortion}>
@@ -71,7 +75,7 @@ const handleSignin=()=>{
           I agree to StatCheck Terms & Conditions and Privacy Policy
         </Text>
       </View>
-     <Button title="Sign in with Google" img={iconGoogle} handleClick={handleSignin} color="white" ></Button>
+     <Button title="Sign in with Google" img={iconGoogle} onPress={handleSignin} color="white" ></Button>
 </View>
  
       
