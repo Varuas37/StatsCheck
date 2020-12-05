@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text,TouchableOpacity } from "react-native";
 import Stats from "../../Stats/Stats";
 
-function VideoCard(props) {
+function VideoCard({onClick}) {
   return (
-    <View
+    <TouchableOpacity
       style={{
         backgroundColor: "#252525",
         width: "90%",
@@ -13,6 +13,8 @@ function VideoCard(props) {
         borderRadius: 10,
         marginBottom: 10,
       }}
+      activeOpacity={0.8}
+      onClick={onClick}
     >
       <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
         <Image
@@ -45,7 +47,7 @@ function VideoCard(props) {
           </View>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 

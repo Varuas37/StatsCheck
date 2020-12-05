@@ -6,7 +6,7 @@ import Trends from "./Trends";
 import PropTypes from 'prop-types'
 
 function TrendsStack(props) {
-    return (
+        return (
         <Stack.Navigator screenOptions={{
             headerTintColor: "#FFFFFF",
             headerStyle: {

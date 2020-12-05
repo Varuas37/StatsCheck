@@ -13,7 +13,7 @@ function CustomIcons({ icon, size, color, backgroundColor, iconOnly, padding}) {
         padding: padding,
       }}
     >
-      <FontAwesome name={icon} size={10} color={color} />
+      <FontAwesome name={icon} size={size} color={color} />
     </View>
   );
 }
