@@ -1,8 +1,8 @@
 import React, { useState,useEffect} from "react";
 
-import { AntDesign,Ionicons } from '@expo/vector-icons'; 
+import { AntDesign,Ionicons,Entypo,MaterialCommunityIcons,FontAwesome5 } from '@expo/vector-icons'; 
 import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
-
+import {HomeOutlined,HomeFilled} from "@ant-design/icons";
 import DashboardStack from "../../screens/Dashboard/DashboardStack";
 import TagsStack from "../../screens/Tags/TagsStack";
 import TrendsStack from "../../screens/Trends/TrendsStack";
@@ -18,22 +18,22 @@ export const AppTabs=()=>{
               let iconName;
   
               if (route.name === 'Home') {
-                iconName =
-                'home'
+                iconName = focused ?
+                <Entypo name={'home'} size={size+1} color={color}/>:<MaterialCommunityIcons name={'home'} size={size} color={color} />;
             
               } else if (route.name === 'Profile') {
-                iconName = 'user'
+                iconName = focused? <FontAwesome5 name="user-alt" size={size-2} color={color} />:<AntDesign name={'user'} size={size} color={color} />;
               }
               else if (route.name === 'Tags') {
-                iconName = 'tagso';
+                iconName = focused ?<AntDesign name={'tags'} size={size+2} color={color} />:<AntDesign name={'tagso'} size={size} color={color} />;
               }
               else if (route.name === 'Trends') {
-                iconName = 'linechart';
+                iconName = focused? <AntDesign name={'areachart'} size={size} color={color} />:<AntDesign name={'linechart'} size={size} color={color} />;
               }
               
 
               // You can return any component that you like here!
-              return <AntDesign name={iconName} size={size} color={color} />;
+              return iconName;
             },
          
 
