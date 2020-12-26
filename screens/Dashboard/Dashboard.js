@@ -1,10 +1,15 @@
 import React, { useState, Fragment } from "react";
-
-import { View, Text, ScrollView, Picker } from "react-native";
+import { View, Text, ScrollView, Button } from "react-native";
 import DashboardCard from "../../components/Card/DashboardCard";
-import Center from "../../components/Center/Center";
-export default function Dashboard() {
+import  ProgressBar from 'react-native-progress/Bar';
+import StyleDashboard from "./StyleDashboard"
+
+export default function Dashboard({navigation}) {
   const [filter, setFilter] = useState("Last 10 Days");
+  
+  const addAccount=()=>{
+    navigation.navigate("AddUsername")
+  }
   return (
     <ScrollView style={{ backgroundColor: "black" }}>
       <Text
@@ -49,19 +54,18 @@ export default function Dashboard() {
             padding: 15,
           }}
         >
-          Add Accounts
+        Track Accounts
         </Text>
-        <Text
-          style={{
-            color: "gray",
-            fontSize: 14,
-            fontWeight: "bold",
-            padding: 15,
-          }}
-        >
-          Add{" "}
-        </Text>
+        <Button title="Add" color="white" onClick={addAccount}>
+   
+           
+        </Button>
+     
       </View>
+
+    
+
+    
     </ScrollView>
   );
 }

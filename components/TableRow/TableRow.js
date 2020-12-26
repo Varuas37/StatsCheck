@@ -2,7 +2,7 @@ import React, { useState,Fragment } from "react";
 import PropTypes from "prop-types";
 import { View, Text, TouchableOpacity } from "react-native";
 import { random } from "faker";
-function TableRow(props) {
+function TableRow({data}) {
   const [details, setShowDetails] = useState(false);
   return (
     <TouchableOpacity
@@ -24,8 +24,8 @@ function TableRow(props) {
           flexDirection: "row",
         }}
       >
-        <Text style={{ color: "white", fontSize: 16 }}>Hello</Text>
-        <Text style={{ color: "white", fontSize: 16 }}>27999</Text>
+        <Text style={{ color: "white", fontSize: 16 }}>{data.tagName}</Text>
+        <Text style={{ color: "white", fontSize: 16 }}>{data.averageViews}</Text>
       </View>
 
       {details ? (
@@ -42,7 +42,7 @@ function TableRow(props) {
             <Text style={{ color: "white", fontSize: 12 }}>
               Estimated True Mean Views
             </Text>
-            <Text style={{ color: "white", fontSize: 12 }}>1212,000</Text>
+            <Text style={{ color: "white", fontSize: 12 }}>{data.estimatedTrueMeanViews}</Text>
           </View>
           <View
             style={{
@@ -55,7 +55,7 @@ function TableRow(props) {
             <Text style={{ color: "white", fontSize: 12 }}>
               Number of Videos with the tag
             </Text>
-            <Text style={{ color: "white", fontSize: 12 }}>90,000</Text>
+            <Text style={{ color: "white", fontSize: 12 }}>{data.numberofVideoswithTag}</Text>
           </View>
         </Fragment>
       ) : null}

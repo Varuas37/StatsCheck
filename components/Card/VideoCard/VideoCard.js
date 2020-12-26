@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { View, StyleSheet, Image, Text,TouchableOpacity } from "react-native";
 import Stats from "../../Stats/Stats";
 
-function VideoCard({onClick}) {
+function VideoCard({onClick,data}) {
   return (
     <TouchableOpacity
       style={{
@@ -25,23 +25,23 @@ function VideoCard({onClick}) {
         />
         <View style={{ flex: 1, flexDirection: "column" }}>
           <Text style={{ color: "white", fontSize: 16, fontWeight: "bold" ,paddingLeft:15,paddingBottom:5}}>
-           I can't belive I did this 
+           {data.description}
           </Text>
           <View
             style={{ paddingLeft: 10, flexDirection: "row", alignItems: "center" }}
           >
-              <Stats icon="heart" text="1.1K" padding={5} />
-            <Stats icon="comment" text="20" padding={5} />
-            <Stats icon="area-chart" text="14%"  padding={5}/>
+              <Stats icon="heart" text={data.likes} padding={5} />
+            <Stats icon="comment" text={data.comments} padding={5} />
+            <Stats icon="area-chart" text={`${data.viewsEngRate} %`}  padding={5}/>
 
             
           </View>
           <View
             style={{ paddingLeft: 10, flexDirection: "row", alignItems: "center" , }}
           >
-              <Stats icon="play" text="1076"  padding={5}/>
-            <Stats icon="share" text="20"  padding={5}/>
-            <Stats icon="calendar" text="3 "  padding={5} />
+              <Stats icon="play" text={data.views}  padding={5}/>
+            <Stats icon="share" text={data.shares}  padding={5}/>
+            <Stats icon="calendar" text={data.daysAfterSoundPeak} padding={5} />
 
             
           </View>

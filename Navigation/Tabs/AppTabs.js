@@ -7,6 +7,7 @@ import DashboardStack from "../../screens/Dashboard/DashboardStack";
 import TagsStack from "../../screens/Tags/TagsStack";
 import TrendsStack from "../../screens/Trends/TrendsStack";
 import ProfileStack from "../../screens/Profile/ProfileStack";
+import SettingsStack from "../../screens/Settings/SettingsStack";
 
 const Tabs = createBottomTabNavigator()
 
@@ -30,6 +31,10 @@ export const AppTabs=()=>{
               else if (route.name === 'Trends') {
                 iconName = focused? <AntDesign name={'areachart'} size={size} color={color} />:<AntDesign name={'linechart'} size={size} color={color} />;
               }
+              else if (route.name === 'Settings') {
+                iconName = focused? <AntDesign name={'setting'} size={size} color={color} />:<AntDesign name={'setting'} size={size} color={color} />;
+              }
+
               
 
               // You can return any component that you like here!
@@ -55,6 +60,7 @@ export const AppTabs=()=>{
             <Tabs.Screen name="Tags" component={TagsStack}></Tabs.Screen>
             <Tabs.Screen name="Trends" component={TrendsStack}></Tabs.Screen>
             <Tabs.Screen name="Profile" component={ProfileStack}></Tabs.Screen>
+            {/* <Tabs.Screen name="Settings" component={SettingsStack}></Tabs.Screen> */}
         </Tabs.Navigator>
     )
 }

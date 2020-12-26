@@ -2,11 +2,11 @@ import React from 'react'
 
 import {createStackNavigator} from "@react-navigation/stack"
 const Stack = createStackNavigator();
-import Trends from "./Trends";
+import Settings from "./Settings";
 import PropTypes from 'prop-types'
 
-function TrendsStack(props) {
-        return (
+function SettingsStack(props) {
+    return (
         <Stack.Navigator screenOptions={{
             headerTintColor: "#FFFFFF",
             headerStyle: {
@@ -14,14 +14,14 @@ function TrendsStack(props) {
                
               },
           }}>
-            <Stack.Screen name="Tiktok Wide View Trends" component={Trends}></Stack.Screen>
+            <Stack.Screen name="Settings" component={Settings}></Stack.Screen>
         </Stack.Navigator>
     )
 }
 
-TrendsStack.propTypes = {
+SettingsStack.propTypes = {
 
 }
 
-export default TrendsStack
+export default SettingsStack
 
