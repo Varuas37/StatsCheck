@@ -6,14 +6,14 @@ function CustomIcons({ icon, size, color, backgroundColor, iconOnly, padding}) {
   return (
     <View
       style={{
-        height: { size },
-        width: { size },
+        // height: { size },
+        // width: { size },
         backgroundColor: backgroundColor,
         borderRadius: 4,
         padding: padding,
       }}
     >
-      <FontAwesome name={icon} size={size} color={color} />
+      <FontAwesome name={icon} color={color} />
     </View>
   );
 }

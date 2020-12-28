@@ -4,6 +4,7 @@ import DashboardCard from "../../components/Card/DashboardCard";
 import Center from "../../components/Center/Center";
 import VideoCard from "../../components/Card/VideoCard/VideoCard";
 import { VideoData } from "./Video/Data";
+import { TouchableOpacity } from "react-native-gesture-handler";
 export default function Profile({ navigation }) {
   const handleClick = () => {
     navigation.navigate("Videos");
@@ -26,7 +27,7 @@ export default function Profile({ navigation }) {
 
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         {VideoData.results.map((item) => (
-          <VideoCard data={item}></VideoCard>
+            <VideoCard  key={item.id} data={item} navigation={navigation}></VideoCard>
         ))}
 
         <Button title="View All" color="white" onPress={handleClick}></Button>

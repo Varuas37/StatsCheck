@@ -7,7 +7,7 @@ function Stats({icon,text,size,backgroundColor,color,padding,weight}){
     return(
         <View style={{display:"flex",flexDirection:"row",padding:5,justifyContent:"center",alignItems:"center", }}>
         <CustomIcons icon={icon} color={color} backgroundColor={backgroundColor} padding={padding}/>
-        
+    
         <Text style={{color:"white",fontSize:16, fontWeight:weight,padding:5}}>{text}</Text>
         </View>
     )
