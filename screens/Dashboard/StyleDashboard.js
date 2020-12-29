@@ -6,6 +6,10 @@ const StyleDashboard = StyleSheet.create({
         width:300,
         height:50
     },
+    image:{
+        height:32,
+        width:32,
+    }
 })
 
 export default StyleDashboard

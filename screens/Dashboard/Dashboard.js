@@ -1,15 +1,15 @@
 import React, { useState, Fragment } from "react";
-import { View, Text, ScrollView, Button } from "react-native";
+import { View, Text, ScrollView, Button, Image } from "react-native";
 import DashboardCard from "../../components/Card/DashboardCard";
-import  ProgressBar from 'react-native-progress/Bar';
-import StyleDashboard from "./StyleDashboard"
+import ProgressBar from "react-native-progress/Bar";
+import StyleDashboard from "./StyleDashboard";
 
-export default function Dashboard({navigation}) {
+export default function Dashboard({ navigation }) {
   const [filter, setFilter] = useState("Last 10 Days");
-  
-  const addAccount=()=>{
-    navigation.navigate("AddUsername")
-  }
+
+  const addAccount = () => {
+    navigation.navigate("AddUsername");
+  };
   return (
     <ScrollView style={{ backgroundColor: "black" }}>
       <Text
@@ -19,7 +19,7 @@ export default function Dashboard({navigation}) {
           fontWeight: "bold",
           paddingLeft: 15,
           paddingTop: "10%",
-          marginBottom:20,
+          marginBottom: 20,
           // backgroundColor:"red"
         }}
       >
@@ -35,37 +35,177 @@ export default function Dashboard({navigation}) {
       >
         <DashboardCard></DashboardCard>
       </View>
-
+      <Text
+        style={{
+          color: "white",
+          fontSize: 24,
+          fontWeight: "bold",
+          paddingLeft: 15,
+          paddingTop: "10%",
+        }}
+      >
+        Basic Stats
+      </Text>
       <View
         style={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: "column",
           width: "100%",
-          alignContent: "space-between",
-          justifyContent: "space-between",
-          // backgroundColor:"red"
+          justifyContent: "center",
+          alignItems: "center",
+          
         }}
       >
-        <Text
+        <View
           style={{
-            color: "white",
-            fontSize: 24,
-            fontWeight: "bold",
-            padding: 15,
+            display: "flex",
+            width: "90%",
+            backgroundColor: "#252525",
+            padding:25,
+            borderRadius: 10,
+            flexDirection: "row",
+            justifyContent:"space-between",
+            // alignItems:"center",
+            alignContent:"center",
+            flexWrap: 'wrap',
           }}
         >
-        Track Accounts
-        </Text>
-        <Button title="Add" color="white" onClick={addAccount}>
-   
-           
-        </Button>
-     
+          <View
+            style={{
+              backgroundColor: "red",
+              width: "47%",
+              borderRadius: 10,
+              height: "50%",
+              alignItems: "center",
+              justifyContent: "center",
+             
+            }}
+          >
+            <Image
+              source={require("./clock.png")}
+              style={StyleDashboard.image}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 16,
+                fontWeight: "bold",
+              }}
+            >
+              8:00 AM
+            </Text>
+            <Text
+              style={{
+                color: "white",
+                fontSize: 10,
+              }}
+            >
+              Best time for you to post
+            </Text>
+          </View>
+          <View
+            style={{
+           backgroundColor: "red",
+              width: "47%",
+              borderRadius: 10,
+              height: "50%",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Image
+              source={require("./video.png")}
+              style={StyleDashboard.image}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 16,
+                fontWeight: "bold",
+              }}
+            >
+             42
+            </Text>
+            <Text
+              style={{
+                color: "white",
+                fontSize: 10,
+              }}
+            >
+              Videos Uploaded Last week
+            </Text>
+          </View>
+
+          <View
+            style={{
+           backgroundColor: "red",
+              width: "47%",
+              borderRadius: 10,
+              height: "50%",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop:20,
+            }}
+          >
+            <Image
+              source={require("./followers.png")}
+              style={StyleDashboard.image}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 16, 
+                fontWeight: "bold",
+              }}
+            >
+             +30
+            </Text>
+            <Text
+              style={{
+                color: "white",
+                fontSize: 10,
+              }}
+            >
+              followers gained
+            </Text>
+          </View>
+
+          <View
+            style={{
+           backgroundColor: "red",
+              width: "47%",
+              borderRadius: 10,
+              height: "50%",
+              alignItems: "center",
+              justifyContent: "center",
+              marginTop:20,
+            }}
+          >
+            <Image
+              source={require("./followers.png")}
+              style={StyleDashboard.image}
+            />
+            <Text
+              style={{
+                color: "white",
+                fontSize: 16, 
+                fontWeight: "bold",
+              }}
+            >
+             +30
+            </Text>
+            <Text
+              style={{
+                color: "white",
+                fontSize: 10,
+              }}
+            >
+              followers gained
+            </Text>
+          </View>
+      
+        </View>
       </View>
-
-    
-
-    
     </ScrollView>
   );
 }
